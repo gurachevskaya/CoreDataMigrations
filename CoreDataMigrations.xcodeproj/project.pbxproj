@@ -40,6 +40,7 @@
 		18069BB728DC73B2004212AA /* AddItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemView.swift; sourceTree = "<group>"; };
 		18069BB928DC78F4004212AA /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
 		18069BBC28DC7CD3004212AA /* GroceryItem.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GroceryItem.xcdatamodel; sourceTree = "<group>"; };
+		18069BBE28DCA635004212AA /* GroceryItem2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GroceryItem2.xcdatamodel; sourceTree = "<group>"; };
 		183543E828DB55CF00FDEEA2 /* CoreDataMigrations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataMigrations.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		183543EB28DB55CF00FDEEA2 /* CoreDataMigrationsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataMigrationsApp.swift; sourceTree = "<group>"; };
 		183543ED28DB55CF00FDEEA2 /* GroceriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceriesView.swift; sourceTree = "<group>"; };
@@ -600,9 +601,10 @@
 		18069BBB28DC7CD3004212AA /* Groceries.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				18069BBE28DCA635004212AA /* GroceryItem2.xcdatamodel */,
 				18069BBC28DC7CD3004212AA /* GroceryItem.xcdatamodel */,
 			);
-			currentVersion = 18069BBC28DC7CD3004212AA /* GroceryItem.xcdatamodel */;
+			currentVersion = 18069BBE28DCA635004212AA /* GroceryItem2.xcdatamodel */;
 			path = Groceries.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

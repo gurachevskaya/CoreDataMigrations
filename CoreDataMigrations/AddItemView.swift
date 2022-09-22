@@ -12,11 +12,20 @@ struct AddItemView: View {
     var persistenceService = PersistenseService.shared
     
     @State private var itemName: String = ""
+    @State private var amount: String = ""
+
     @Binding var isAddItemPresented: Bool
     
     var body: some View {
         VStack {
-                TextField("Type name", text: $itemName)
+            TextField("Type name", text: $itemName)
+                .padding()
+                .frame(height: 50)
+                .background(Color(UIColor.systemGray6))
+                .cornerRadius(8)
+            
+            TextField("Amount", text: $amount)
+                .keyboardType(.decimalPad)
                 .padding()
                 .frame(height: 50)
                 .background(Color(UIColor.systemGray6))
@@ -24,7 +33,7 @@ struct AddItemView: View {
 
             Button {
                 do {
-                    try persistenceService.addItem(name: itemName)
+                    try persistenceService.addItem(title: itemName, amount: Double(amount) ?? 1)
                     isAddItemPresented = false
                 } catch let error {
                     print(error.localizedDescription)
@@ -37,6 +46,7 @@ struct AddItemView: View {
                     .foregroundColor(.white)
                     .cornerRadius(10)
             }
+            .disabled(itemName.isEmpty)
         }
         .padding()
     }

@@ -29,9 +29,11 @@ final class PersistenseService: ObservableObject {
         }
     }
     
-    func addItem(name: String) throws {
+    func addItem(title: String, amount: Double) throws {
         let newItem = GroceryItem(context: context)
-        newItem.name = name
+        newItem.title = title
+        newItem.amount = amount
+
         do {
             try save()
         } catch let error {

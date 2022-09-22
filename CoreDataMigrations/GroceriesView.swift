@@ -14,22 +14,30 @@ struct GroceriesView: View {
     @FetchRequest(
         entity: GroceryItem.entity(),
         sortDescriptors: [
-            NSSortDescriptor(keyPath: \GroceryItem.name, ascending: true)
+            NSSortDescriptor(keyPath: \GroceryItem.title, ascending: true)
         ]) var items: FetchedResults<GroceryItem>
     
     @State private var isAddItemPresented = false
     
     var body: some View {
         VStack {
+            Text("Groceries list")
+                .font(.title)
+            
             Button {
                 isAddItemPresented = true
             } label: {
                 Image(systemName: "plus.circle")
                     .frame(height: 50)
             }
+            
             List {
                 ForEach(items) { item in
-                    Text(item.name ?? "unknown")
+                    HStack {
+                        Text(item.title ?? "unknown")
+                        Spacer()
+                        Text(String(format: "%.1f", item.amount))
+                    }
                 }
                 .onDelete(perform: deleteItem)
             }
