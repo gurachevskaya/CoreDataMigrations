@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct CoreDataMigrationsApp: App {
+    
+    @StateObject var persistenceService = PersistenseService.shared
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            GroceriesView()
+                .environment(\.managedObjectContext, persistenceService.context)
         }
     }
 }
